@@ -1,0 +1,58 @@
+@font-face{
+    font-family: myfont;
+    src: url(ff-clan-web-pro-thin.woff);
+}
+
+body {
+    margin: 0;
+    font-family:myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    background-color: #ffffff;
+    text-shadow:0 -1px 1px rgba(0, 0, 0, 0.2)
+  }
+  
+table{
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+table th{
+    text-align: left;
+    padding: 7px 30px 7px 10px;
+    color: #fff;
+    font-size: 25px;
+    background-color: #27AD60;
+}
+table td{
+    /* border: 1px solid #e3e3e3; */
+    padding: 10px 17px;
+    color: #fff;
+}
+table tr:nth-child(even) td{
+    background-color: #fbf9f966;
+}
+
+/* .row-fluid [class*="span"]:first-child {
+    margin-left: 0;
+}
+
+.box{
+    border: 1px solid #DEDEDE;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    margin-top: 10px; 
+    margin-bottom: 10px ;
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+    -webkit-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+    -moz-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+}
+
+.dataTables_filter input, .dataTables_length select {
+    display: inline-block;
+    margin-bottom: 0;
+    } */
+
+
+

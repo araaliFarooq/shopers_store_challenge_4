@@ -1,0 +1,57 @@
+/*    ----    css form  ----   */
+.logs{
+    width: 270px;
+    margin: 50px auto;
+}
+.logs .input-box {
+    margin: 17px 0;
+}
+.logs .input-box input {
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    padding: 10px;
+    color: #777;
+    background-color: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+}
+.logs .input-box input:focus,
+.logs .input-box input:valid {
+    border-bottom: 0.5px solid #27AD60;
+    transition: 0.5s;
+}
+.logs .input-box input[type="submit"] {
+    border: none;
+    background: #27AD60;
+    border-radius:25px;
+    color: #fff;
+    font-weight: bold;
+}
+.logs .input-box input[type="submit"]:hover {
+    background: #1d1d1d;
+    transition: 0.5s;
+}
+
+
+/*    ----   layout css for login page  ----   */
+.login_box{
+    margin: 100px auto;
+    width:50%;
+    text-align: center;
+}
+.heading p{
+    color: #1d1d1d;
+    font-size: 17px;
+}
+.logos{
+    float: left;
+    margin-top: 80px;
+}
+.credits{
+    float: right;
+    padding: 15px;
+    background: #fbf9f966;
+    margin: 0;
+}
