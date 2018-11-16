@@ -1,5 +1,5 @@
-document.getElementById('loginform').addEventListener('submit', login);
-function login(event){
+document.getElementById('loginform').addEventListener('submit', user_login);
+function user_login(event){
     event.preventDefault();
 
     let username = document.getElementById('username').value;
@@ -15,7 +15,8 @@ function login(event){
 
     .then((response) => response.json())
     .then((data) => {
-        
+        localStorage.setItem("role",data["role"])
+        localStorage.setItem("username",data["logged_in_user"])
         if(data['token'] && data["role"] == "admin"){
             var token= data['token']
             localStorage.setItem("token",token)
@@ -31,3 +32,4 @@ function login(event){
             
         })
 }
+
