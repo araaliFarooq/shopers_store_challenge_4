@@ -1,0 +1,220 @@
+@font-face{
+	font-family: myfont;
+	src: url(ff-clan-web-pro-thin.woff);
+}
+body{
+	background:#f8f8f9;
+	font-family:myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a{
+	color: #1888A8;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover{
+	color:rgb(17, 147, 154);
+}
+h2, h3{
+	font-size: 1em;
+	text-align: center;
+	color:#fff;
+	padding:1em 0;
+	font-family: myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h3 .term{
+	float:left;
+}
+.boxed{
+    background-color: black;
+    padding:20px;
+    width:70px;
+    height:70px;
+    border:none;
+    outline:none;
+}
+.logo{
+    text-align: center;
+    color:#fff;
+    font:17px bold calibri;
+    margin:20px auto;
+}
+.main{
+	margin:50px auto;
+	width:44%;
+}
+
+.head2 h2{
+	font-family:myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #1d1d1d;
+	font-weight: bold;
+	font-size: 1em;
+	font-size:32px;
+}
+.head3{
+	font-family:myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:20px;
+	color: rgb(0, 0,0);
+	font-weight: 350;
+	margin-top: 0px;
+	margin-bottom: 50px;
+}
+.lable input[type="text"], .lable-2 input[type="text"],input[type="number"], .lable-2 .input-group input[type="tel"], .lable-2 .input-group .input-group-addon .dropdown{
+	padding: 15px;
+	font-size: 16px;
+	margin: 18px 0px;
+	color: #000000;
+	cursor: pointer;
+	background: rgb(255, 255, 255);
+	font-family: myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	outline: none;
+	font-weight: 400;
+	font-size: 1em;
+	margin-left: 3px;
+	font-style:normal;
+	font-variant:normal;
+	border: 1px solid #e5e5e4;
+}
+.lable input[type="text"]{
+	width:87%;
+}
+.lable-2 input[type="text"],input[type="number"] {
+	width: 94%;
+}
+.lable-2 .input-group input[type="tel"]{
+	width: 455px;
+	border-left:none;
+	margin-left:-0.5px;
+}
+.lable input[type="text"]:hover,.lable-2 input[type="text"]:hover,input[type="Password"]:hover,#active {
+	color:#DCDCDC;
+	border-left:6px solid;
+}
+.submit{
+	padding:5px 4px;
+	text-align: center;
+}
+input[type=submit] {
+	padding: 17px 30px;
+	color: #fff;
+	float: right;
+	font-family:  myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: rgb(15, 134, 140);
+	border: 1px solid rgb(15, 134, 140);
+	cursor: pointer;
+	font-size: 16px;
+	transition: all 0.5s ease-out;
+	text-align: left;
+	outline:none;
+	width: 100%;
+	-webkit-appearance: none;
+}
+.submit input[type=submit]:hover {
+	 background:rgb(15, 134, 140);
+}
+
+/* Input group css */
+
+.lable-2 .input-group{
+	display: table;
+  }
+.lable-2 .input-group .input-group-addon{
+    display:table-cell;
+    text-align:center;
+}
+
+
+
+
+.col_1_of_2:first-child {
+	margin-left: 0;
+}
+.span_1_of_2 {
+	width:49.7%;
+}
+.col_1_of_2 {
+	display: block;
+	float: left;
+	margin:0 0 0 0.6%;
+}
+
+.lable.col_1_of_2.span_1_of_2.client_name{
+	font-size: 12px;
+	color: rgb(0, 0,0);
+}
+
+.col_1_of_2 .span_1_of_2 label{
+	font-size: 12px;
+	color: rgb(0, 0,0);
+}
+.term{
+	font-family: myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:rgb(17, 147, 154);
+	font-size: 12px;
+	font-weight:bold;
+}
+.term_foot{
+	font-family: myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:rgb(0, 0, 0);
+	font-size: 10px;
+	font-weight:bold;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.foot{
+	color:rgb(17, 147, 154);
+}
+
+
+/*----start-responsive design-----*/
+@media (max-width:1024px){
+.col_1_of_2 {
+	margin: 0 0 0 3.6%;
+}
+.span_1_of_2 {
+	width: 47.7%;
+}
+.span_1_of_f {
+	width: 50%;
+}
+i.fb, i.tw {
+	margin-right: 1em;
+}
+.main {
+	width: 50%;
+}
+}
+@media (max-width:800px){
+.span_1_of_f {
+	width: 100%;
+}
+.col_1_of_f {
+	float:none;
+}
+.span_1_of_2 {
+	width: 100%;
+}
+.col_1_of_2 {
+	margin:0;
+}
+.lable-2 input[type="text"], input[type="Password"] {
+	padding: 14px;
+	width: 89%;
+}
+}
+@media (max-width:480px){
+.main {
+margin: 7em auto 0;
+width:70%;
+}
+}
+@media (max-width:320px){
+.main {
+	width:80%;
+}
+.lable input[type="text"] {
+	width: 83%;
+}
+.lable-2 input[type="text"], input[type="Password"] {
+	width: 84%;
+}
+}
