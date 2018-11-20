@@ -7,6 +7,7 @@
     <title>Shopers Store</title>
     <link rel="stylesheet" href="static/css/store.css">
     <script type="text/javascript" src="static/js/nav_bar.js"></script>
+    <script src="./static/js/token_check.js"></script>
 </head>
 
 <body>
@@ -48,21 +49,21 @@
                 </div>
 
                 <div class="former">
-                    <form>
+                    <form id="signup-form" action="">
                         <div class="input-box">
-                            <input type="text" name="" placeholder="username" required="">
+                            <input type="text" id="username" placeholder="username" required="">
                         </div>
                         <div class="input-box">
-                            <input type="text" name="" placeholder="contact" required="">
+                            <input type="text" id="contact" placeholder="07xx-xxxxxx" required="">
                         </div>
                         <div class="input-box">
-                            <input type="text" name="" placeholder="password" required=""></p>
+                            <input type="text" id="password" placeholder="password" required=""></p>
                         </div>
                         <div class="input-box">
-                                <select name="role">
+                                <select id="role">
                                     <option selected>Role</option>
-                                    <option value="">Attendant</option>
-                                    <option value="">Admin</option>
+                                    <option value="attendant">Attendant</option>
+                                    <option value="admin">Admin</option>
                                 </select>
                             </div>
                         <div class="input-box">
@@ -79,5 +80,6 @@
         </footer>
 
     </main>
+    <script src="./static/js/add_attendant.js"></script>
 </body>
 </html>
