@@ -86,7 +86,7 @@ h3 .term{
 	margin-left:-0.5px;
 }
 .lable input[type="text"]:hover,.lable-2 input[type="text"]:hover,input[type="Password"]:hover,#active {
-	color:#DCDCDC;
+	color:#000000;
 	border-left:6px solid;
 }
 .submit{
@@ -98,8 +98,8 @@ input[type=submit] {
 	color: #fff;
 	float: right;
 	font-family:  myfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background: rgb(15, 134, 140);
-	border: 1px solid rgb(15, 134, 140);
+	background: #27AD60;
+	border: 1px solid #27AD60;
 	cursor: pointer;
 	font-size: 16px;
 	transition: all 0.5s ease-out;
@@ -107,9 +107,10 @@ input[type=submit] {
 	outline:none;
 	width: 100%;
 	-webkit-appearance: none;
+	border-radius: 25px;
 }
 .submit input[type=submit]:hover {
-	 background:rgb(15, 134, 140);
+	 background:#27AD60;
 }
 
 /* Input group css */

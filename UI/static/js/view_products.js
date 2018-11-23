@@ -34,7 +34,7 @@ function view_products() {
             }
         }
         else{
-            alert("No menu items available");
+            alert("No products available");
         }
                 
     })
