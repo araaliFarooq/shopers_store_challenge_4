@@ -31,5 +31,8 @@ function user_login(event){
         }    
             
         })
+    .catch(function (error) {
+        console.log('Request failed', error);
+    });
 }
 
