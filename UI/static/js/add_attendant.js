@@ -21,6 +21,10 @@ function add_attendant(event){
 
     .then((response) => response.json())
     .then((data) => {
+
+        if (data.msg === "Token has expired"){
+          window.location.href = './loginpage.html';
+        }
         console.log(token)
         if(data["message"] == "Attendant account created"){
             window.location.reload();
