@@ -7,6 +7,10 @@ function ProductDetails(product_id) {
         }
     }).then(response => response.json())
     .then(data => {
+        
+        if (data.msg === "Token has expired"){
+            window.location.href = './loginpage.html';
+        }
         console.log('successful', data);
         var item_count = Object.keys("product_details").length;
        

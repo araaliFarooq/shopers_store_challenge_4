@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="static/css/profile.css">
     <link rel="stylesheet" href="static/css/toggle.css">
     <script type="text/javascript" src="static/js/nav_bar.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
 </head>
 
-<body>
+<body onload="view_products()">
+        
     <main id="container">
 
         <header class="head" id="nav_header">
@@ -29,7 +35,7 @@
                     </ul>
             </div>
         </header>
-
+       
         <section class="containa">
             <div class="category_card_dash">
                 <h3 class="category-title"><a href="#">Menu</a></h3>
@@ -63,7 +69,9 @@
                 </div>
                 <p class="category-content">Leather.</p>
             </div>
+            
             <div class="home_card_dash">
+                    <p id="alert" style="display: none;"></p>
                     <center><h1>Available Products</h1></center>
                 <div id="table_dash"> 
                 <table id="product-table_dash">
@@ -76,124 +84,78 @@
                         </tr>
                     </thead>
 
-                    <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <tr class="odd">
-                                    <td class="center">Tailored Jeans (Gents)</td>
-                                    <td class="center ">50</td>
-                                    <td class="center ">65000</td>
-                                    
-                                    <td class="center ">
-                                            <button class="view">View</button>
-                                            <button class="edit">Edit</button>
-                                            <button class="delete">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr class="odd">
-                                        <td class="center">Swim Suits</td>
-                                        <td class="center ">200</td>
-                                        <td class="center ">30000</td>
-                                        
-                                        <td class="center ">
-                                                <button class="view">View</button>
-                                                <button class="edit">Edit</button>
-                                                <button class="delete">Delete</button>
-                                        </td>
-                                    </tr>
-                        <tr class="odd">
-                                <td class="center">Sweaters (Gents)</td>
-                                <td class="center ">150</td>
-                                <td class="center ">75000</td>
-                                
-                                <td class="center ">
-                                        <button class="view">View</button>
-                                        <button class="edit">Edit</button>
-                                        <button class="delete">Delete</button>
-                                </td>
-                            </tr>
-                            <tr class="odd">
-                                    <td class="center">Snickers</td>
-                                    <td class="center ">200</td>
-                                    <td class="center ">30000</td>
-                                    
-                                    <td class="center ">
-                                            <button class="view">View</button>
-                                            <button class="edit">Edit</button>
-                                            <button class="delete">Delete</button>
-                                    </td>
-                                </tr>
-                        <tr class="odd">
-                                <td class="center">T.Shirts (Gents)</td>
-                                <td class="center ">150</td>
-                                <td class="center ">75000</td>
-                                
-                                <td class="center ">
-                                        <button class="view">View</button>
-                                        <button class="edit">Edit</button>
-                                        <button class="delete">Delete</button>
-                                </td>
-                            </tr>
-                            <tr class="odd">
-                                    <td class="center">Soccer Jerseys</td>
-                                    <td class="center ">300</td>
-                                    <td class="center ">100000</td>
-                                    
-                                    <td class="center ">
-                                            <button class="view">View</button>
-                                            <button class="edit">Edit</button>
-                                            <button class="delete">Delete</button>
-                                    </td>
-                                </tr>
-                        <tr class="odd">
-                                <td class="center">Denim Jeans (Gents)</td>
-                                <td class="center ">150</td>
-                                <td class="center ">75000</td>
-                                
-                                <td class="center ">
-                                        <button class="view">View</button>
-                                        <button class="edit">Edit</button>
-                                        <button class="delete">Delete</button>
-                                </td>
-                            </tr>
-                            <tr class="odd">
-                                    <td class="center">Trainers</td>
-                                    <td class="center ">200</td>
-                                    <td class="center ">30000</td>
-                                    
-                                    <td class="center ">
-                                            <button class="view">View</button>
-                                            <button class="edit">Edit</button>
-                                            <button class="delete">Delete</button>
-                                    </td>
-                                </tr>
-                        <tr class="odd">
-                            <td class="center">Denim Jeans (Ladies)</td>
-                            <td class="center ">150</td>
-                            <td class="center ">75000</td>
-                            
-                            <td class="center ">
-                                    <button class="view">View</button>
-                                    <button class="edit">Edit</button>
-                                    <button class="delete">Delete</button>
-                            </td>
-                        </tr>
-                        <tr class="odd">
-                                <td class="center">Sweat Pants</td>
-                                <td class="center ">200</td>
-                                <td class="center ">30000</td>
-                                
-                                <td class="center ">
-                                        <button class="view">View</button>
-                                        <button class="edit">Edit</button>
-                                        <button class="delete">Delete</button>
-                                </td>
-                            </tr>
-                        </tr>
+                    <tbody id="table_body" role="alert" aria-live="polite" aria-relevant="all">
+                                <!-- dynamic table -->
                     </tbody>
                 </table>
                 </div>
                 
             </div>
-            <script type="text/javascript" src="static/js/toggle.js"></script>
+            <script src="./static/js/crud_ops.js"></script>
+            <script type="text/javascript">
+                function showDialog(product_id) {
+                    $('main').dialog({
+                        modal: true,
+                        open: function () {
+                            localStorage.setItem("product_id",product_id)
+                            $(this).load("product_modal.html");
+                            
+                        },
+                        close: function(event, ui) {
+                            localStorage.removeItem("product_id")
+                            window.location.reload()
+                                $(this).remove();
+                            },
+                        height: 500,
+                        width: 500,
+                        title: 'Product Details'
+                    });
+            
+                    return false;
+                }
+
+                function showEditDialog(product_id) {
+                    $('main').dialog({
+                        modal: true,
+                        open: function () {
+                            localStorage.setItem("product_id",product_id)
+                            $(this).load("edit_product.html");
+                            
+                        },
+                        close: function(event, ui) {
+                            localStorage.removeItem("product_id")
+                            window.location.reload()
+                                $(this).remove();
+                            },
+                        height: 500,
+                        width: 500,
+                        title: 'Edit Product Details'
+                    });
+            
+                    return false;
+                }
+
+                function showDeleteDialog(product_id) {
+                    $('main').dialog({
+                        modal: true,
+                        open: function () {
+                            localStorage.setItem("product_id",product_id)
+                            $(this).load("delete_product.html");
+                            
+                        },
+                        close: function(event, ui) {
+                            localStorage.removeItem("product_id")
+                            window.location.reload()
+                                $(this).remove();
+                            },
+                        height: 500,
+                        width: 500,
+                        title: 'Delete Product'
+                    });
+            
+                    return false;
+                }
+            </script>
         </section>
 
         <footer>

@@ -19,7 +19,7 @@
 </head>
 <body>
         <p id="alert" style="display:none;"></p>
-	<div class="main" id="main">
+	<div class="main" >
 		<form>
 		   	<div class="lable-2">
                 <label class="client_name"> Product Name </label>
@@ -32,20 +32,12 @@
 		        <input type="text" class="text" id="unit_price">
 		   	</div>
 		   	<td class="center">
-                    <center><button id="cancel" class="delete" type="button">Cancel</button>
+                    <center><button class="delete" type="button">Cancel</button>
                     <di>&nbsp;</di>
-                    <button class="view" type="button" onclick="edit_product(product_id);">Confirm</button></center>
+                    <button class="view" type="button" onclick="delete_product(product_id);">Confirm</button></center>
             </td>
 		</form>
     </div>
     <script src="./static/js/crud.js"></script>
-    <script>
-            $(document).ready(function(){
-                $("#cancel").click(function(){
-                    console.log("clicked")
-                    $("#main").remove();
-                });
-            });
-    </script>
 </body>
 </html>
